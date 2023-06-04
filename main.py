@@ -124,6 +124,7 @@ with torch.no_grad():
         
 # display some images
 for img, probs in zip(test_files[:5], dog_probs[:5]):
+    print("Showing image...")
     pil_im = Image.open(img, 'r')
     label = "dog" if probs[1] > 0.5 else "cat"
     title = "prob of dog: " + str(probs[1]) + " Classified as: " + label
